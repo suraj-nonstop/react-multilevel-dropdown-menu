@@ -8,10 +8,6 @@ export const menuItemsData = [
     url: "/services",
     submenu: [
       {
-        title: "Web Design",
-        url: "web-design",
-      },
-      {
         title: "Web Development",
         url: "web-dev",
         submenu: [
@@ -19,24 +15,19 @@ export const menuItemsData = [
             title: "Frontend",
             url: "frontend",
           },
-          {
-            title: "Backend",
-            submenu: [
-              {
-                title: "NodeJS",
-                url: "node",
-              },
-              {
-                title: "PHP",
-                url: "php",
-              },
-            ],
-          },
+          
         ],
       },
       {
         title: "SEO",
         url: "seo",
+        submenu: [
+          {
+            title: "SEO Frontend",
+            url: "SEO frontend",
+          },
+          
+        ],
       },
     ],
   },
