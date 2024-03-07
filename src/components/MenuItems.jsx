@@ -11,6 +11,7 @@ const MenuItems = ({ items, depthLevel }) => {
       if (dropdown && ref.current && !ref.current.contains(event.target)) {
         setDropdown(false);
       }
+     
     };
     document.addEventListener("mousedown", handler);
     document.addEventListener("touchstart", handler);
@@ -21,7 +22,21 @@ const MenuItems = ({ items, depthLevel }) => {
     };
   }, [dropdown]);
 
-  const onMouseEnter = () => {
+  const onMouseEnter = (event) => {
+    if(depthLevel===1){
+     // const currentElement = event.target;
+      const currentElement = event.target.closest('li');
+      if(currentElement){
+        const index = Array.from(currentElement.parentNode.children).indexOf(currentElement);
+        const nextElementWithClassAbc = event.target.nextElementSibling;
+        if(nextElementWithClassAbc){
+          const newTop = -(index*40);
+          nextElementWithClassAbc.style.top = newTop + "px";
+        }
+      }
+     
+    }
+    
     setDropdown(true);
   };
 
